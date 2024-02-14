@@ -47,7 +47,7 @@ def matrix_power(M, P):
         P //= 2
     return result
 
-P = 5
+
 HR = [[1], [0], [1]]
 MR = [[1, 1, 1],
       [1, 0, 0],
