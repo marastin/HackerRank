@@ -18,3 +18,16 @@ for _ in range(T):
         print(a//b)
     except Exception as e:
         print("Error Code:", e)
+
+
+# HackerRank
+import re
+T = int(input())
+
+for _ in range(T):
+    try:
+        re.compile(input())
+    except Exception:
+        print(False)
+    else:
+        print(True)
