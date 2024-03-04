@@ -11,3 +11,27 @@ S2 = "DXXVIIII"
 pattern = r"^(M{0,3})(C{0,3}|CD|DC{0,3}|CM)(X{0,3}|XL|LX{0,3}|XC)(I{0,3}|IV|VI{0,3}|IX)$"
 print(str(bool(re.match(pattern, S1))))
 print(str(bool(re.match(pattern, S2))))
+
+
+
+# Example 2 - Phone Number
+# 10 digits started with 7, 8, 9
+pattern = r'^[7-9]\d{9}$'
+for _ in range(int(input())):
+    t = input()
+    if re.match(pattern, t):
+        print('YES')
+    else:
+        print('NO')
+
+
+
+# Example 3 - Email
+# format: NAME <username@domain.extension>
+pattern = r'^\w+\s<[a-zA-Z][\w._-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}>$'
+
+n = int(input())
+for _ in range(n):
+    s = input()
+    if re.match(pattern, s):
+        print(s)
