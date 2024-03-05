@@ -35,3 +35,17 @@ for _ in range(n):
     s = input()
     if re.match(pattern, s):
         print(s)
+
+
+# Example 4 - Hex Color
+pattern = r'(?<!^)(#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?)'
+# (?: ...) non capturing group
+# (?<!x) negative look behind
+# ()? zero or one
+N = int(input())
+for _ in range(N):
+    S = input()
+    m = re.findall(pattern, S)
+    if m:
+        for color in m:
+            print(color)
