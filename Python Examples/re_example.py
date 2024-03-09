@@ -49,3 +49,32 @@ for _ in range(N):
     if m:
         for color in m:
             print(color)
+
+
+# Example 5 - Check UID for special pattern
+# Solution 1
+def check_uid(uid):
+    # Check for repeating characters
+    if len(set(uid)) != len(uid):
+        return False
+    # Check for at least one uppercase letter
+    if not re.search(r'[A-Z].*[A-Z]', uid):
+        return False
+    # Check for at least three digits
+    if len(re.findall(r'\d', uid)) < 3:
+        return False
+    # Check for alphanumeric characters only
+    if not re.match(r'^[a-zA-Z0-9]{10}$', uid):
+        return False
+    return True
+
+
+for _ in range(int(input())):
+    uid = input()
+    print("Valid" if check_uid(uid) else "Invalid")
+
+# Solution 2
+pattern = r"^(?!.*(.).*\1)(?=.*[A-Z].*[A-Z])(?=.*\d.*\d.*\d)[A-Za-z0-9]{10}$"
+
+for _ in range(int(input())):
+    print("Valid") if re.match(pattern, input()) else print("Invalid")
