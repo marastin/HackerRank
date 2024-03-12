@@ -78,3 +78,21 @@ pattern = r"^(?!.*(.).*\1)(?=.*[A-Z].*[A-Z])(?=.*\d.*\d.*\d)[A-Za-z0-9]{10}$"
 
 for _ in range(int(input())):
     print("Valid") if re.match(pattern, input()) else print("Invalid")
+
+
+
+# Example 6: Card Number
+# ► It must start with a 4, 5 or 6.
+# ► It must contain exactly 16 digits.
+# ► It must only consist of digits (0-9).
+# ► It may have digits in groups of 4, separated by one hyphen "-".
+# ► It must NOT use any other separator like ' ' , '_', etc.
+# ► It must NOT have 4 or more consecutive repeated digits.
+    
+pattern = r"^(?!.*(.)(-?\1){3,})([4-6]([0-9]{3})-?([0-9]{4}-?){3})$"
+for _ in range(int(input())):
+    c = input()
+    if re.match(pattern, c):
+        print("Valid")
+    else:
+        print("Invalid")
