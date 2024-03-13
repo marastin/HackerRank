@@ -96,3 +96,16 @@ for _ in range(int(input())):
         print("Valid")
     else:
         print("Invalid")
+
+
+
+# Example 7
+# must be a number in the range from 100000 to 999999 inclusive.
+# must not contain more than one alternating repetitive digit pair.
+        
+regex_integer_in_range = r"^[1-9][0-9]{5}$"
+regex_alternating_repetitive_digit_pair = r"(\d)(?=\d\1)"
+
+P = input()
+
+print (bool(re.match(regex_integer_in_range, P)) and len(re.findall(regex_alternating_repetitive_digit_pair, P)) < 2)
