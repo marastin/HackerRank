@@ -18,4 +18,12 @@ def square(match):
     return str(number**2)
 
 print(re.sub(r"\d+", square, "1 2 3 4 5 6 7 8 9"))
+
+
+
+# Example 2
+n, m = map(int, input().split())
+matrix = [list(input()) for _ in range(n)]
+s = "".join(["".join(col) for col in zip(*matrix)])
+print(re.sub(r"(?<=[a-zA-Z0-9])[^a-zA-Z0-9]+(?=[a-zA-Z0-9])", " ", s))
     
